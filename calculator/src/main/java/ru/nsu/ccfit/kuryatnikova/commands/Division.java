@@ -11,7 +11,9 @@ public class Division implements Command {
             var stack = context.getStack();
             var first = stack.pop();
             var second = stack.pop();
-            stack.push(first * second);
+            if (second == 0.0)
+                throw new CalculatorException("Div by zero.");
+            stack.push(first / second);
         } catch (NoSuchElementException e) {
             throw new CalculatorException("Stack is empty like my brain\n");
         }

@@ -31,11 +31,6 @@ public class CommandsReader {
             line = scanner.nextLine();
         }
 
-        if (!scanner.hasNextLine()) {
-            currentCommand = null;
-            return;
-        }
-
         if (line.startsWith("PUSH")) {
             currentCommand = factory.getCommand("PUSH");
             ((Push) currentCommand).setOperand(line.substring(5));
