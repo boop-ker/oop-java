@@ -44,13 +44,6 @@ public class CommandFactory {
      * @throws BadSyntaxException
      */
     public Command getCommand(String input) throws BadCommandClassException, BadSyntaxException {
-        if (input.startsWith("$"))
-            return
-        try {
-            var number = Double.parseDouble(input);
-            return new Operand(number);
-        } catch (NumberFormatException ignored) {}
-
         try {
             StringBuilder mes = new StringBuilder("Trying to get Command class for ");
             log.info(mes.append(input));
